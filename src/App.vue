@@ -15,6 +15,10 @@ export default {
   components: {
     Header,
   },
+  async mounted() {
+    await this.$store.dispatch('fetchHotels');
+    this.hotels = this.$store.state.hotels;
+  },
 };
 </script>
 

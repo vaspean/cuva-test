@@ -1,7 +1,9 @@
 <template>
   <header class="header">
     <div class="header__container container">
-      <img class="header__logo" src="../assets/img/cuva_logo_white.png" alt="">
+      <router-link to="/">
+        <img class="header__logo" src="../assets/img/cuva_logo_white.png" alt="">
+      </router-link>
     </div>
   </header>
 </template>
