@@ -14,9 +14,14 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async fetchHotels(context) {
-      const hotels = await axios.get('https://jsonplaceholder.typicode.com/posts');
-      context.commit('setHotels', hotels.data);
+    async fetchHotels({ commit }) {
+      const hotelsLimit = 20;
+      const hotels = await axios.get('https://jsonplaceholder.typicode.com/posts', {
+        params: {
+          _limit: hotelsLimit,
+        },
+      });
+      commit('setHotels', hotels.data);
       return hotels;
     },
   },

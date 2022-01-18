@@ -1,0 +1,13 @@
+@import '_variables.scss';
+@import '_fonts.scss';
+
+* {
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif !important;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
