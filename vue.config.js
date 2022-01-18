@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "/hotels/",
+  publicPath: "/cuva-test/",
   css: {
     loaderOptions: {
       sass: {
