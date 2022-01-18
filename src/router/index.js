@@ -19,7 +19,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  base: '/hotels/',
+  base: '/cuva-test/',
   mode: 'history',
   routes,
 });
