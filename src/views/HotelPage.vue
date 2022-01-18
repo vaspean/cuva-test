@@ -1,7 +1,7 @@
 <template>
   <div class="hotel_page">
     <router-link class="previous_page" to="/">← Назад</router-link>
-      <div class="hotel_page__content row">
+      <div class="hotel_page__content row z-depth-1">
           <img class="hotel_page__img col s12 xl6" src="../assets/img/hotel.jpg" alt="Отель">
         <div class="hotel_page__info col s12 xl6">
           <p class="hotel_page__name">{{currentHotel.title}}</p>

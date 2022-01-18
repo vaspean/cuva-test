@@ -1,10 +1,16 @@
 <template>
-  <form action="" class="booking">
-    <p>Забронировать:</p>
-    <input placeholder="Адрес" type="text" name="" id="" v-model="address">
-    <input placeholder="Имя" type="text" name="" id="" v-model="name">
-    <input placeholder="Телефон" type="tel" name="" id="" v-model="telephone">
-    <button type="submit" @click.prevent="book(hotelId)">Отправить</button>
+  <form action="" class="booking z-depth-1">
+    <div v-if="!isSent" class="form__content">
+      <p>Забронировать:</p>
+      <input placeholder="Адрес" type="text" name="" id="" v-model="address">
+      <input placeholder="Имя" type="text" name="" id="" v-model="name">
+      <input placeholder="Телефон" type="tel" name="" id="" v-model="telephone">
+      <button type="submit" @click.prevent="book(hotelId)">Отправить</button>
+    </div>
+    <div v-else class="thanks_message">
+      <p>Спасибо! Отель забронирован.</p>
+      <img src="../assets/submit.svg" alt="">
+    </div>
   </form>
 </template>
 
@@ -16,11 +22,13 @@ export default {
       address: '',
       name: '',
       telephone: '',
+      isSent: false,
     };
   },
   methods: {
     book(id) {
       if (this.address && this.name && this.telephone) {
+        this.isSent = !this.isSent;
         console.log({
           id, address: this.address, name: this.name, telephone: this.telephone,
         });
@@ -57,6 +65,14 @@ export default {
     &:hover {
       opacity: 0.6;
     }
+  }
+}
+
+.thanks_message {
+  text-align: center;
+  img {
+    width: 100px;
+    height: 100px;
   }
 }
 
